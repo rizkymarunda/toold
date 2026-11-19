@@ -69,5 +69,5 @@ done
 # 6. Hash collected artifacts
 (cd "${OUTDIR}" && find . -type f ! -name "SHA256SUMS" -exec sha256sum {} + > SHA256SUMS)
 
-tar -czf $OUTDIR.tar.gz -C $OUTDIR
+tar -czf $OUTDIR.tar.gz $OUTDIR 2>/dev/null
 log_step "Collection complete file :  ${OUTDIR}.tar.gz"
